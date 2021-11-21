@@ -25,8 +25,8 @@ SECRET_KEY = '+9ebwwq%s#g_tlnj(jyt&&ky&n8cco&t1bpz#rbfycuh5^u-qw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['', 'localhost', '147.182.251.209', 'www.physicsprep.xyz', 'physicsprep.xyz']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['', 'localhost', '147.182.251.209', 'www.physicsprep.xyz', 'physicsprep.xyz']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
