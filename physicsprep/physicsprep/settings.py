@@ -25,8 +25,8 @@ SECRET_KEY = '+9ebwwq%s#g_tlnj(jyt&&ky&n8cco&t1bpz#rbfycuh5^u-qw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['', 'localhost', '147.182.251.209', 'www.physicsprep.xyz', 'physicsprep.xyz']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['', 'localhost', '147.182.251.209', 'www.physicsprep.xyz', 'physicsprep.xyz']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -78,24 +78,24 @@ WSGI_APPLICATION = 'physicsprep.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-   'default': {
-      'ENGINE': 'django.db.backends.sqlite3',
-     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-
 #DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'finalproject',
-#        'USER': 'finalprojectuser',
-#        'PASSWORD': 'password',
-#        'HOST': 'localhost',
-#        'PORT': '',
+#   'default': {
+#      'ENGINE': 'django.db.backends.sqlite3',
+#     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
 #}
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'finalproject',
+        'USER': 'finalprojectuser',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 
 # Password validation
