@@ -30,6 +30,8 @@ ALLOWED_HOSTS = ['', 'localhost', '147.182.251.209', 'www.physicsprep.xyz', 'phy
 
 
 # Application definition
+SITE_ID = 1
+# Application definition
 
 INSTALLED_APPS = [
     'courses.apps.CoursesConfig',
@@ -41,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'students.apps.StudentsConfig',
     'embed_video',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     
 ]
 

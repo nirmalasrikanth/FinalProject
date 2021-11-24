@@ -20,7 +20,14 @@ from django.urls import path, include
 from courses.views import CourseListView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import path, include
+from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from courses.sitemaps import PostSitemap
 
+sitemaps = {
+    'posts': PostSitemap,
+}
 
 urlpatterns = [
     path('accounts/login/', auth_views.LoginView.as_view(), 
@@ -31,6 +38,8 @@ urlpatterns = [
     path('course/', include('courses.urls')),
     path('', CourseListView.as_view(), name='course_list'),
     path('students/', include('students.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap')
 ]
 
 if settings.DEBUG:
