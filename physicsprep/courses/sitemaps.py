@@ -1,9 +1,9 @@
 from django.contrib.sitemaps import Sitemap
-from .models import Post
+from .models import Course
 class PostSitemap(Sitemap):
     changefreq = 'weekly'
     priority = 0.9
     def items(self):
-        return Post.published.all()
+        return Course.all()
     def lastmod(self, obj):
         return obj.updated
