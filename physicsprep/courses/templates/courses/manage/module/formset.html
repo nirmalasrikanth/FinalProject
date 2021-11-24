@@ -4,11 +4,16 @@
 {% endblock %}
 {% block content %}
   <h1>Edit "{{ course.title }}"</h1>
-  <div class="module">
+  <div class="row">
     <h2>Course modules</h2>
     <form method="post">
-      {{ formset }}
-      {{ formset.management_form }}
+     <!-- {{ formset }} -->
+     {{ formset.management_form }}
+      <table>
+        {% for form in formset %}
+        <tr><td><ul class="list-inline">{{ form }}</ul></td></tr>
+        {% endfor %}
+      </table>
       {% csrf_token %}
       <input type="submit" value="Save modules">
     </form>

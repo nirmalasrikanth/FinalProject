@@ -1,26 +1,35 @@
 {% extends "base.html" %}
+
 {% block title %}My courses{% endblock %}
 {% block content %}
   <h1>My courses</h1>
   <div class="module">
     {% for course in object_list %}
+    <section class="course-section spad pb-0"> 
       <div class="course-info">
         <h3>{{ course.title }}</h3>
-        <p>
-          <a href="{% url "course_edit" course.id %}">Edit</a>
-          <a href="{% url "course_delete" course.id %}">Delete</a>
-          <a href="{% url "course_module_update" course.id %}">Edit modules</a>
-          {% if course.modules.count > 0 %}
-            <a href="{% url "module_content_list" course.modules.first.id %}">
-            Manage contents</a>
-          {% endif %}
-        </p>
+        
+          <p>
+            <div class="course-warp">
+              <ul class="course-filter controls">
+                <li class="control"><a href="{% url "course_edit" course.id %}">Edit</a></li>
+                <li class="control"><a href="{% url "course_delete" course.id %}">Delete</a></li>
+                <li class="control"><a href="{% url "course_module_update" course.id %}">Edit modules</a></li>
+                <li class="control"> {% if course.modules.count > 0 %}
+                   <a href="{% url "module_content_list" course.modules.first.id %}">
+                     Manage contents</a>
+                  {% endif %}</li>
+              </ul>        
+            </div>
+          </p>
       </div>
-    {% empty %}
-      <p>You haven't created any courses yet.</p>
-    {% endfor %}
-    <p>
-      <a href="{% url "course_create" %}" class="button">Create new course</a>
-    </p>
-  </div>
+      {% empty %}
+       <p>You haven't created any courses yet.</p>
+      {% endfor %}
+     <div class="course-warp">
+       <ul class="course-filter controls">
+         <li class="control"><a href="{% url "course_create" %}" class="button">Create new course</a></li>
+       </ul>
+      </div>
+    </section>
 {% endblock %}
