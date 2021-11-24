@@ -85,7 +85,7 @@ class ItemBase(models.Model):
             f'courses/content/{self._meta.model_name}.html',
             {'item': self})
             
-                
+
 class Text(ItemBase):
     content = models.TextField()
 class File(ItemBase):
